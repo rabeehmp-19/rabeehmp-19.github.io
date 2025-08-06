@@ -1,8 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mohammed RABEEH MP</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -11,173 +9,211 @@
       --secondary: #5eaaa8;
       --background: #f4f4f4;
       --text: #1a1a1a;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html, body {
-      font-family: 'Cairo', sans-serif;
-      background: var(--background);
-      color: var(--text);
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-    header {
-      background: linear-gradient(to right, #2f4858, #5eaaa8);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.8rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-top: 8px;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 30px 20px;
-    }
-    .section {
-      margin-bottom: 40px;
-    }
-    .section h2 {
-      font-size: 1.6rem;
-      margin-bottom: 12px;
-      border-left: 5px solid var(--secondary);
-      padding-left: 10px;
-    }
-    .section p {
-      font-size: 1rem;
-    }
-    .contact-box {
-      background: #e8f0ef;
-      padding: 20px;
-      border-radius: 10px;
-    }
-    .contact-box p {
-      margin-bottom: 10px;
-    }
-    .contact-box a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .social-buttons a {
-      display: inline-block;
-      margin-right: 12px;
-      margin-top: 12px;
-      padding: 10px 20px;
-      background: var(--secondary);
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-    .social-buttons a:hover {
-      background: var(--primary);
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #2f4858;
-      color: #ccc;
-      font-size: 0.9rem;
-    }
-    .quote {
-      font-style: italic;
-      color: #444;
-      margin-top: 20px;
-      border-left: 4px solid var(--primary);
-      padding-left: 15px;
-    }
+      --accent: #e0c097;
+    }* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      .section h2 {
-        font-size: 1.3rem;
-      }
-    }
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background-image: url('https://www.transparenttextures.com/patterns/white-wall-3.png');
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+header {
+  background: linear-gradient(to right, #2f4858cc, #5eaaa8cc), url('https://images.unsplash.com/photo-1607083206173-324b94de86c2');
+  background-size: cover;
+  background-blend-mode: overlay;
+  color: white;
+  text-align: center;
+  padding: 100px 20px 80px;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.3rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.section {
+  margin-bottom: 50px;
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  border-left: 5px solid var(--secondary);
+  padding-left: 12px;
+}
+
+.section p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.quote {
+  font-style: italic;
+  color: var(--primary);
+  border-left: 4px solid var(--accent);
+  padding-left: 15px;
+  background: #fffbe6;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.contact-box {
+  background: #eaf4f4;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.contact-box p {
+  margin-bottom: 10px;
+}
+
+.contact-box a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.social-buttons a {
+  display: inline-block;
+  margin: 10px 10px 0 0;
+  padding: 10px 20px;
+  background: var(--secondary);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.social-buttons a:hover {
+  background: var(--primary);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #2f4858;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--secondary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+  background: var(--primary);
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+}
+
   </style>
-</head>
-<body>
-
+</head><body>
   <header>
     <h1>Mohammed RABEEH MP</h1>
-    <p>Accountant | Research Institute - IGNOU | Islamic Scholar</p>
-  </header>
-
-  <div class="container">
-
-    <div class="section">
+    <p>Accountant | Research Institute, IGNOU | Islamic Scholar</p>
+  </header>  <div class="container">
+    <div class="section" id="about">
       <h2>About Me</h2>
-      <p>
-        I am an accountant working with the research division of IGNOU, passionate about finance and research excellence. Alongside my professional work, I am deeply rooted in Islamic studies, teaching and sharing knowledge based on classical texts and modern interpretations.
-      </p>
-      <p class="quote">
-        "Seek knowledge from the cradle to the grave." — Prophet Muhammad ﷺ
-      </p>
-    </div>
+      <p>I am an Accountant at a reputed Research Institute under IGNOU. My professional strength lies in financial reporting, budgeting, audits, and compliance with government standards.</p>
+      <p>I am also a passionate Islamic scholar, balancing professional duties with religious study and community guidance.</p>
+    </div><div class="section" id="quote">
+  <h2>Motivational Quotes</h2>
+  <p class="quote">"Discipline is the bridge between goals and accomplishment." — Jim Rohn</p>
+  <p class="quote">"Accounting is the language of business." — Warren Buffett</p>
+  <p class="quote">"Strive for accuracy in all matters. Even a decimal can destroy trust."</p>
+</div>
 
-    <div class="section">
-      <h2>Contact</h2>
-      <div class="contact-box">
-        <p><strong>Phone:</strong> <a href="tel:+919074300268">+91 9074300268</a></p>
-        <p><strong>Email:</strong> <a href="mailto:rabeehmp@email.com">rabeehmp@email.com</a></p>
-        <p><strong>Instagram:</strong> <a href="https://www.instagram.com/m.rrabeehh?igsh=Y2M3MXVhbzJtc3Ux" target="_blank">@m.rrabeehh</a></p>
-        <div class="social-buttons">
-          <a href="https://www.instagram.com/m.rrabeehh?igsh=Y2M3MXVhbzJtc3Ux" target="_blank">Instagram</a>
-          <a href="https://wa.me/919074300268" target="_blank">WhatsApp Me</a>
-        </div>
-      </div>
-    </div>
+<div class="section" id="accounting">
+  <h2>Accounting Expertise</h2>
+  <p><strong>1. Financial Accounting:</strong> Preparation of balance sheets, income statements, and cash flow statements. Ensuring transparency in institutional finances.</p>
+  <p><strong>2. Cost Accounting:</strong> Understanding and optimizing costs of operations and academic programs within the research institute.</p>
+  <p><strong>3. Audit Support:</strong> Preparation and assistance for internal and external audits, ensuring legal and procedural compliance.</p>
+  <p><strong>4. Taxation:</strong> Hands-on experience in TDS, GST filings, and compliance with regulatory norms.</p>
+  <p><strong>5. Research Budgeting:</strong> Collaborating with project investigators to budget and track funding for research initiatives.</p>
+</div>
 
-    <div class="section">
-      <h2>Mission & Values</h2>
-      <p>
-        My mission is to bridge academic research and Islamic ethics, serving both the intellect and the soul. I believe in living a life of discipline, balance, and purpose — rooted in Deen and contributing to Dunya.
-      </p>
-    </div>
+<div class="section" id="blog">
+  <h2>Blog Highlights</h2>
+  <p><strong>📘 How Islamic Finance Reshapes Modern Economy:</strong> A look at Riba-free alternatives and ethical investing.</p>
+  <p><strong>📊 Budgeting Tips for Research Institutions:</strong> Efficient allocation and tracking of research grants.</p>
+  <p><strong>🧠 Productivity & Faith:</strong> How Islamic routines boost focus and reduce procrastination.</p>
+</div>
 
+<div class="section" id="mission">
+  <h2>Mission & Values</h2>
+  <p>To serve society by integrating ethics with economics. I uphold Islamic principles in every financial transaction I handle, ensuring barakah in both workplace and personal life.</p>
+  <p>Knowledge, discipline, and sincerity guide my personal and professional decisions.</p>
+</div>
+
+<div class="section" id="contact">
+  <h2>Contact</h2>
+  <div class="contact-box">
+    <p><strong>Phone:</strong> <a href="tel:+919074300268">+91 9074300268</a></p>
+    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/m.rrabeehh?igsh=Y2M3MXVhbzJtc3Ux" target="_blank">@m.rrabeehh</a></p>
+    <div class="social-buttons">
+      <a href="https://wa.me/919074300268" target="_blank">WhatsApp Me</a>
+      <a href="https://www.instagram.com/m.rrabeehh?igsh=Y2M3MXVhbzJtc3Ux" target="_blank">Visit Instagram</a>
+    </div>
   </div>
-  
+</div>
 
-  <footer>
-    &copy; 2025 Mohammed RABEEH MP — All rights reserved.
-  </footer>
+  </div>  <footer>
+    &copy; 2025 Mohammed RABEEH MP. All rights reserved.
+  </footer><button id="scrollTopBtn" title="Go to top">↑</button>
 
   <script>
-    // Reserved for future use: animations, form validation, etc.
-    console.log("Website loaded for Mohammed RABEEH MP");
-  </script>
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    window.onscroll = function () {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    };
 
-</body>
-</html>
-<!-- Blog Section for Mohammed RABEEH MP Website --><section id="blog" style="padding: 60px 20px; background-color: #f9f9f9; font-family: 'Cairo', sans-serif;">
-  <div style="max-width: 900px; margin: auto;">
-    <h2 style="text-align: center; font-size: 32px; margin-bottom: 40px; color: #0d3b66;">Blog</h2><article style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 30px;">
-  <h3 style="font-size: 24px; color: #174c4f;">Balancing Faith and Finance: A Personal Reflection</h3>
-  <p style="font-size: 16px; color: #444; line-height: 1.6;">In today's fast-paced world, managing professional responsibilities while upholding Islamic principles is a noble challenge. Through my journey at IGNOU and personal studies, I’ve learned to harmonize both with sincerity and purpose...</p>
-  <a href="#" style="color: #007b8f; text-decoration: underline;">Read more</a>
-</article>
-
-<article style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 30px;">
-  <h3 style="font-size: 24px; color: #174c4f;">Why Every Muslim Should Learn Basic Accounting</h3>
-  <p style="font-size: 16px; color: #444; line-height: 1.6;">Financial literacy is not only practical, but also spiritual. Islam encourages fairness, accountability, and avoiding interest. Accounting gives us the tools to stay transparent and organized in all dealings...</p>
-  <a href="#" style="color: #007b8f; text-decoration: underline;">Read more</a>
-</article>
-
-<article style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-  <h3 style="font-size: 24px; color: #174c4f;">My Journey Through IGNOU and Beyond</h3>
-  <p style="font-size: 16px; color: #444; line-height: 1.6;">Studying at IGNOU opened my eyes to the depth and complexity of finance. But it also showed me the importance of blending our worldly knowledge with spiritual awareness. Here’s how I approached it...</p>
-  <a href="#" style="color: #007b8f; text-decoration: underline;">Read more</a>
-</article>
-
-  </div>
-  </section>
+    scrollTopBtn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script></body></html>
