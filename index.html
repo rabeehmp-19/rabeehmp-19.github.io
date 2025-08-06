@@ -4,244 +4,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohammed RABEEH MP - Professional Portfolio</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #2f4858;
             --secondary: #5eaaa8;
-            --background: #f4f4f4;
-            --text: #1a1a1a;
             --accent: #e0c097;
-            --light-bg: #f9f9f9;
-            --card-bg: #ffffff;
-            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            --radius: 10px;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--background);
-            color: var(--text);
-            line-height: 1.7;
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+            padding: 0;
+            background-image: linear-gradient(to bottom, rgba(245, 247, 250, 0.9), rgba(245, 247, 250, 0.9)), url('https://www.transparenttextures.com/patterns/brushed-alum.png');
+        }
+
+        .container {
+            max-width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height */
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
             position: relative;
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-            background-image: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            padding: 25mm;
+            display: flex;
+            flex-direction: column;
         }
 
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(255, 255, 255, 0.92);
-            z-index: -1;
-        }
-
-        /* Navigation */
-        nav {
-            background: rgba(47, 72, 88, 0.95);
-            padding: 15px 5%;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
+        .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--secondary);
         }
 
-        .logo {
-            font-family: 'Cairo', sans-serif;
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: white;
-            text-decoration: none;
-        }
-
-        .nav-links {
+        .profile {
             display: flex;
+            align-items: center;
             gap: 20px;
         }
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--secondary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .nav-links a:hover, .nav-links a.active {
-            background: var(--secondary);
+        .profile-info h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 5px;
         }
 
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
+        .profile-info h2 {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 10px;
         }
 
-        /* Header */
-        header {
-            background: linear-gradient(to right, #2f4858cc, #5eaaa8cc);
-            color: white;
-            text-align: center;
-            padding: 150px 20px 100px;
-            margin-top: 70px;
+        .contact-info {
+            text-align: right;
         }
 
-        header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-            font-family: 'Cairo', sans-serif;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        header p {
-            font-size: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Page Navigation */
-        .page-nav {
-            background: var(--light-bg);
-            padding: 20px;
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 70px;
-            z-index: 900;
-        }
-
-        .page-nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .page-btn {
-            padding: 10px 20px;
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .contact-info p {
+            margin-bottom: 5px;
             font-size: 0.9rem;
         }
 
-        .page-btn:hover, .page-btn.active {
-            background: var(--secondary);
-            color: white;
-            border-color: var(--secondary);
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s;
         }
 
-        /* Main Content */
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 30px;
-            padding: 0 20px;
-        }
-
-        .content-area {
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            padding: 30px;
-        }
-
-        .sidebar {
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            padding: 25px;
-            height: fit-content;
-            position: sticky;
-            top: 150px;
-        }
-
-        .page {
-            display: none;
-        }
-
-        .page.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .contact-info a:hover {
+            color: var(--secondary);
+            text-decoration: underline;
         }
 
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+            position: relative;
         }
 
-        .section h2 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid var(--secondary);
-            font-family: 'Cairo', sans-serif;
+        .section-title {
+            font-size: 1.4rem;
             color: var(--primary);
-        }
-
-        .section p {
-            font-size: 1.05rem;
             margin-bottom: 15px;
-            line-height: 1.8;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent);
+            display: flex;
+            align-items: center;
         }
 
-        .quote {
-            font-style: italic;
-            color: var(--primary);
-            border-left: 4px solid var(--accent);
-            padding: 15px 20px;
-            background: #fffbe6;
-            border-radius: 0 var(--radius) var(--radius) 0;
-            margin: 25px 0;
+        .section-title i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .about-highlights {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .highlight-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
         }
 
         .expertise-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
         }
 
         .expertise-card {
-            background: var(--light-bg);
-            border-radius: var(--radius);
-            padding: 25px;
+            background: var(--light);
+            padding: 20px;
+            border-radius: 8px;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease;
-            border-top: 4px solid var(--secondary);
+            border-left: 4px solid var(--secondary);
         }
 
         .expertise-card:hover {
@@ -250,21 +177,68 @@
 
         .expertise-card h3 {
             color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .expertise-card h3 i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        .quote-section {
+            background: linear-gradient(rgba(47, 72, 88, 0.9), rgba(94, 170, 168, 0.8)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+            color: white;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .quote:before, .quote:after {
+            content: '"';
+            font-size: 2rem;
+            position: absolute;
+            opacity: 0.5;
+        }
+
+        .quote:before {
+            top: -15px;
+            left: -5px;
+        }
+
+        .quote:after {
+            bottom: -30px;
+            right: -5px;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-weight: 600;
         }
 
         .blog-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
+            gap: 20px;
         }
 
         .blog-card {
-            background: var(--light-bg);
-            border-radius: var(--radius);
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease;
         }
 
@@ -280,47 +254,81 @@
 
         .blog-content {
             padding: 20px;
+            background: white;
         }
 
         .blog-content h3 {
             color: var(--primary);
             margin-bottom: 10px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
-        .contact-box {
-            background: #eaf4f4;
-            padding: 25px;
-            border-radius: var(--radius);
-        }
-
-        .contact-box p {
-            margin-bottom: 15px;
-            display: flex;
+        .mission-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
             align-items: center;
         }
 
-        .contact-box i {
-            margin-right: 10px;
-            color: var(--secondary);
-            font-size: 1.2rem;
-            width: 25px;
+        .mission-text p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .mission-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .mission-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .contact-box {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            flex-shrink: 0;
         }
 
         .social-buttons {
             display: flex;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 25px;
             flex-wrap: wrap;
         }
 
         .social-buttons a {
             display: inline-flex;
             align-items: center;
-            padding: 12px 25px;
+            padding: 10px 20px;
             background: var(--secondary);
             color: white;
-            border-radius: 8px;
+            border-radius: 30px;
             text-decoration: none;
             transition: background 0.3s ease;
             font-weight: 500;
@@ -328,255 +336,246 @@
 
         .social-buttons a:hover {
             background: var(--primary);
+            transform: translateY(-2px);
         }
 
         .social-buttons a i {
             margin-right: 8px;
         }
 
-        /* Footer */
-        footer {
+        .footer {
+            margin-top: auto;
             text-align: center;
-            padding: 30px 20px;
-            background: var(--primary);
-            color: #ccc;
-            font-size: 0.95rem;
-            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-gray);
+            color: var(--gray);
+            font-size: 0.9rem;
         }
 
-        /* Scroll to top button */
-        #scrollTopBtn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--secondary);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 20px;
-            cursor: pointer;
-            display: none;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            transition: background 0.3s ease;
-            z-index: 999;
-        }
-
-        #scrollTopBtn:hover {
-            background: var(--primary);
-            transform: scale(1.1);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 900px) {
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
             .container {
-                grid-template-columns: 1fr;
-            }
-            
-            .sidebar {
-                position: static;
-            }
-            
-            header h1 {
-                font-size: 2.8rem;
-            }
-            
-            header p {
-                font-size: 1.2rem;
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+                max-width: 100%;
+                min-height: 100vh;
             }
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: var(--primary);
+            .container {
+                padding: 15mm;
+                margin: 10px;
+            }
+            
+            .header {
                 flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                gap: 20px;
             }
             
-            .nav-links.active {
-                display: flex;
+            .profile {
+                flex-direction: column;
             }
             
-            .mobile-menu-btn {
-                display: block;
+            .contact-info {
+                text-align: center;
+            }
+            
+            .about-content, .mission-content {
+                grid-template-columns: 1fr;
             }
             
             .expertise-grid, .blog-grid {
                 grid-template-columns: 1fr;
             }
         }
-
-        @media (max-width: 480px) {
-            header {
-                padding: 130px 15px 80px;
-            }
-            
-            header h1 {
-                font-size: 2.2rem;
-            }
-            
-            header p {
-                font-size: 1.1rem;
-            }
-            
-            .section h2 {
-                font-size: 1.5rem;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <a href="#" class="logo">Mohammed RABEEH MP</a>
-        <div class="nav-links">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#expertise">Expertise</a>
-            <a href="#blog">Blog</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <button class="mobile-menu-btn">
-            <i class="fas fa-bars"></i>
-        </button>
-    </nav>
-
-    <!-- Header -->
-    <header id="home">
-        <h1>Mohammed RABEEH MP</h1>
-        <p>Accountant | Research Institute, IGNOU | Islamic Scholar</p>
-    </header>
-
-    <!-- Page Navigation -->
-    <div class="page-nav">
-        <div class="page-nav-container">
-            <button class="page-btn active" data-page="home">Home</button>
-            <button class="page-btn" data-page="about">About</button>
-            <button class="page-btn" data-page="expertise">Expertise</button>
-            <button class="page-btn" data-page="blog">Blog</button>
-            <button class="page-btn" data-page="mission">Mission</button>
-            <button class="page-btn" data-page="contact">Contact</button>
-            <button class="page-btn" data-page="page7">Finance</button>
-            <button class="page-btn" data-page="page8">Research</button>
-            <button class="page-btn" data-page="page9">Taxation</button>
-            <button class="page-btn" data-page="page10">Audits</button>
-            <button class="page-btn" data-page="page11">Ethics</button>
-            <button class="page-btn" data-page="page12">Budgeting</button>
-            <button class="page-btn" data-page="page13">Compliance</button>
-            <button class="page-btn" data-page="page14">Education</button>
-            <button class="page-btn" data-page="page15">Articles</button>
-            <button class="page-btn" data-page="page16">Resources</button>
-            <button class="page-btn" data-page="page17">Projects</button>
-            <button class="page-btn" data-page="page18">Testimonials</button>
-            <button class="page-btn" data-page="page19">FAQs</button>
-            <button class="page-btn" data-page="page20">Services</button>
-        </div>
-    </div>
-
-    <!-- Main Content -->
     <div class="container">
-        <div class="content-area">
-            <!-- Home Page -->
-            <div id="home-page" class="page active">
-                <div class="section">
-                    <h2>Welcome to My Professional Portfolio</h2>
-                    <p>I am an Accountant at a reputed Research Institute under IGNOU with expertise in financial reporting, budgeting, audits, and compliance with government standards. Alongside my professional career, I am a passionate Islamic scholar dedicated to balancing professional duties with religious study and community guidance.</p>
-                    
-                    <div class="quote">
-                        "Discipline is the bridge between goals and accomplishment." — Jim Rohn
-                    </div>
-                </div>
-                
-                <div class="section">
-                    <h2>Professional Highlights</h2>
-                    <div class="expertise-grid">
-                        <div class="expertise-card">
-                            <h3>Financial Accounting</h3>
-                            <p>Preparation of balance sheets, income statements, and cash flow statements with a focus on institutional transparency.</p>
-                        </div>
-                        <div class="expertise-card">
-                            <h3>Cost Accounting</h3>
-                            <p>Expertise in understanding and optimizing costs of operations and academic programs.</p>
-                        </div>
-                        <div class="expertise-card">
-                            <h3>Audit Support</h3>
-                            <p>Preparation and assistance for internal and external audits, ensuring legal compliance.</p>
-                        </div>
-                    </div>
+        <!-- Header Section -->
+        <div class="header">
+            <div class="profile">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Mohammed RABEEH MP" class="profile-img">
+                <div class="profile-info">
+                    <h1>Mohammed RABEEH MP</h1>
+                    <h2>Accountant | Research Institute, IGNOU | Islamic Scholar</h2>
+                    <p>Financial Expert & Ethical Finance Advocate</p>
                 </div>
             </div>
-            
-            <!-- About Page -->
-            <div id="about-page" class="page">
-                <div class="section">
-                    <h2>About Me</h2>
-                    <p>With over a decade of experience in financial management within academic research institutions, I have developed a comprehensive understanding of the unique financial challenges and requirements of the education sector. My work at IGNOU has allowed me to contribute to meaningful research initiatives through effective financial stewardship.</p>
-                    
-                    <p>My journey as an Islamic scholar began during my university years, where I developed a deep interest in Islamic jurisprudence and ethics. This dual path has enabled me to integrate ethical principles into modern financial practices, creating a unique perspective on responsible financial management.</p>
-                    
-                    <p>I hold a Master's degree in Commerce with specialization in Accounting, and have completed advanced certifications in Islamic Finance from renowned institutions. This combination of formal education and self-directed religious studies forms the foundation of my professional approach.</p>
-                </div>
-                
-                <div class="section">
-                    <h2>Professional Journey</h2>
-                    <p><strong>2015-Present:</strong> Senior Accountant, Research Institute, IGNOU</p>
-                    <p><strong>2012-2015:</strong> Financial Analyst, Education Development Trust</p>
-                    <p><strong>2010-2012:</strong> Junior Accountant, Academic Research Foundation</p>
-                </div>
+            <div class="contact-info">
+                <p><i class="fas fa-phone"></i> <a href="tel:+919074300268">+91 9074300268</a></p>
+                <p><i class="fas fa-envelope"></i> contact@rabeehmp.com</p>
+                <p><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/rabeeh_mp5?igsh=aXAwMjJ0NXV4eGU1" target="_blank">@rabeeh_mp5</a></p>
             </div>
-            
-            <!-- Expertise Page -->
-            <div id="expertise-page" class="page">
-                <div class="section">
-                    <h2>Accounting Expertise</h2>
-                    <div class="expertise-grid">
-                        <div class="expertise-card">
-                            <h3>Financial Accounting</h3>
-                            <p>Preparation of balance sheets, income statements, and cash flow statements. Ensuring transparency in institutional finances.</p>
+        </div>
+
+        <!-- About Section -->
+        <div class="section">
+            <h2 class="section-title"><i class="fas fa-user"></i> About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am an Accountant at a reputed Research Institute under IGNOU with over a decade of experience in financial management. My professional strength lies in financial reporting, budgeting, audits, and compliance with government standards.</p>
+                    <p>As a passionate Islamic scholar, I balance professional duties with religious study and community guidance, integrating ethical principles into modern financial practices.</p>
+                    <p>My expertise spans financial accounting, cost analysis, audit support, taxation, and research budgeting, ensuring transparency and compliance in all financial operations.</p>
+                </div>
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <div class="expertise-card">
-                            <h3>Cost Accounting</h3>
-                            <p>Understanding and optimizing costs of operations and academic programs within the research institute.</p>
+                        <div>
+                            <h3>Education</h3>
+                            <p>M.Com (Accounting), Advanced Islamic Finance Certifications</p>
                         </div>
-                        <div class="expertise-card">
-                            <h3>Audit Support</h3>
-                            <p>Preparation and assistance for internal and external audits, ensuring legal and procedural compliance.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-briefcase"></i>
                         </div>
-                        <div class="expertise-card">
-                            <h3>Taxation</h3>
-                            <p>Hands-on experience in TDS, GST filings, and compliance with regulatory norms.</p>
+                        <div>
+                            <h3>Experience</h3>
+                            <p>10+ years in academic financial management</p>
                         </div>
-                        <div class="expertise-card">
-                            <h3>Research Budgeting</h3>
-                            <p>Collaborating with project investigators to budget and track funding for research initiatives.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-star"></i>
                         </div>
-                        <div class="expertise-card">
-                            <h3>Financial Compliance</h3>
-                            <p>Ensuring adherence to government financial regulations and institutional policies.</p>
+                        <div>
+                            <h3>Specializations</h3>
+                            <p>Research Budgeting, Ethical Finance, Compliance</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Expertise Section -->
+        <div class="section">
+            <h2 class="section-title"><i class="fas fa-chart-line"></i> Accounting Expertise</h2>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <h3><i class="fas fa-file-invoice-dollar"></i> Financial Accounting</h3>
+                    <p>Preparation of balance sheets, income statements, and cash flow statements with a focus on institutional transparency.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3><i class="fas fa-calculator"></i> Cost Accounting</h3>
+                    <p>Understanding and optimizing costs of operations and academic programs within research institutes.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3><i class="fas fa-search"></i> Audit Support</h3>
+                    <p>Preparation and assistance for internal and external audits, ensuring legal and procedural compliance.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3><i class="fas fa-receipt"></i> Taxation</h3>
+                    <p>Expertise in TDS, GST filings, and compliance with regulatory norms for educational institutions.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3><i class="fas fa-flask"></i> Research Budgeting</h3>
+                    <p>Collaborating with project investigators to budget and track funding for research initiatives.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3><i class="fas fa-balance-scale"></i> Financial Compliance</h3>
+                    <p>Ensuring adherence to government financial regulations and institutional policies.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quotes Section -->
+        <div class="quote-section">
+            <div class="quote">
+                Discipline is the bridge between goals and accomplishment.
+            </div>
+            <div class="quote-author">— Jim Rohn</div>
             
-            <!-- Blog Page -->
-            <div id="blog-page" class="page">
-                <div class="section">
-                    <h2>Blog Highlights</h2>
-                    <div class="blog-grid">
-                        <div class="blog-card">
-                            <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
-                            <div class="blog-content">
-                                <h3>How Islamic Finance Reshapes Modern Economy</h3>
-                                <p>A look at Riba-free alternatives and ethical investing principles that are gaining global recognition.</p>
-                            </div>
-                        </div>
-                        <div class="blog-card">
-                            <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+            <div class="quote">
+                Accounting is the language of business.
+            </div>
+            <div class="quote-author">— Warren Buffett</div>
+            
+            <div class="quote">
+                Strive for accuracy in all matters. Even a decimal can destroy trust.
+            </div>
+        </div>
+
+        <!-- Blog Section -->
+        <div class="section">
+            <h2 class="section-title"><i class="fas fa-blog"></i> Blog Highlights</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="blog-content">
+                        <h3>How Islamic Finance Reshapes Modern Economy</h3>
+                        <p>A look at Riba-free alternatives and ethical investing principles gaining global recognition.</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="blog-content">
+                        <h3>Budgeting Tips for Research Institutions</h3>
+                        <p>Efficient allocation and tracking of research grants in academic settings.</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="blog-content">
+                        <h3>Productivity & Faith</h3>
+                        <p>How Islamic routines boost professional focus and reduce procrastination.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mission Section -->
+        <div class="section">
+            <h2 class="section-title"><i class="fas fa-bullseye"></i> Mission & Values</h2>
+            <div class="mission-content">
+                <div class="mission-text">
+                    <p>To serve society by integrating ethics with economics. I uphold Islamic principles in every financial transaction I handle, ensuring barakah in both workplace and personal life.</p>
+                    <p>My approach combines technical expertise with ethical considerations, creating financial systems that are both efficient and morally sound.</p>
+                    <p>Knowledge, discipline, and sincerity guide my personal and professional decisions. I believe in transparent financial practices that build trust and foster long-term institutional success.</p>
+                </div>
+                <div class="mission-image">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mission Image">
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="section">
+            <h2 class="section-title"><i class="fas fa-envelope"></i> Contact</h2>
+            <div class="contact-box">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h3>Phone</h3>
+                        <p><a href="tel:+919074300268">+91 9074300268</a></p>
+                    </div>
+                </div>
                 
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div>
+                        <h3>Instagram</h3>
+                        <p><a href="https://www.instagram.com/rabeeh_mp5?igsh=aXAwMjJ0NXV4eGU1" target="_blank">@rabeeh_mp5</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div>
+                        <h3>WhatsApp</h3>
+    
