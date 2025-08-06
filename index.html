@@ -1,219 +1,582 @@
-<!DOCTYPE html><html lang="en"><head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mohammed RABEEH MP</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #2f4858;
-      --secondary: #5eaaa8;
-      --background: #f4f4f4;
-      --text: #1a1a1a;
-      --accent: #e0c097;
-    }* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed RABEEH MP - Professional Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2f4858;
+            --secondary: #5eaaa8;
+            --background: #f4f4f4;
+            --text: #1a1a1a;
+            --accent: #e0c097;
+            --light-bg: #f9f9f9;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --radius: 10px;
+        }
 
-html {
-  scroll-behavior: smooth;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-  font-family: 'Cairo', sans-serif;
-  background-image: url('https://www.transparenttextures.com/patterns/white-wall-3.png');
-  background-color: var(--background);
-  color: var(--text);
-  line-height: 1.7;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-header {
-  background: linear-gradient(to right, #2f4858cc, #5eaaa8cc), url('https://images.unsplash.com/photo-1607083206173-324b94de86c2');
-  background-size: cover;
-  background-blend-mode: overlay;
-  color: white;
-  text-align: center;
-  padding: 100px 20px 80px;
-}
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+            position: relative;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-image: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+        }
 
-header h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.92);
+            z-index: -1;
+        }
 
-header p {
-  font-size: 1.3rem;
-}
+        /* Navigation */
+        nav {
+            background: rgba(47, 72, 88, 0.95);
+            padding: 15px 5%;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 40px 20px;
-}
+        .logo {
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+        }
 
-.section {
-  margin-bottom: 50px;
-}
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
 
-.section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  border-left: 5px solid var(--secondary);
-  padding-left: 12px;
-}
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
 
-.section p {
-  font-size: 1rem;
-  margin-bottom: 15px;
-}
+        .nav-links a:hover, .nav-links a.active {
+            background: var(--secondary);
+        }
 
-.quote {
-  font-style: italic;
-  color: var(--primary);
-  border-left: 4px solid var(--accent);
-  padding-left: 15px;
-  background: #fffbe6;
-  border-radius: 5px;
-  padding: 15px;
-}
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
 
-.contact-box {
-  background: #eaf4f4;
-  padding: 20px;
-  border-radius: 10px;
-}
+        /* Header */
+        header {
+            background: linear-gradient(to right, #2f4858cc, #5eaaa8cc);
+            color: white;
+            text-align: center;
+            padding: 150px 20px 100px;
+            margin-top: 70px;
+        }
 
-.contact-box p {
-  margin-bottom: 10px;
-}
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            font-family: 'Cairo', sans-serif;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
 
-.contact-box a {
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: bold;
-}
+        header p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-.social-buttons a {
-  display: inline-block;
-  margin: 10px 10px 0 0;
-  padding: 10px 20px;
-  background: var(--secondary);
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
+        /* Page Navigation */
+        .page-nav {
+            background: var(--light-bg);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 70px;
+            z-index: 900;
+        }
 
-.social-buttons a:hover {
-  background: var(--primary);
-}
+        .page-nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #2f4858;
-  color: #ccc;
-  font-size: 0.9rem;
-}
+        .page-btn {
+            padding: 10px 20px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
 
-#scrollTopBtn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: var(--secondary);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  font-size: 20px;
-  cursor: pointer;
-  display: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s ease;
-}
+        .page-btn:hover, .page-btn.active {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+        }
 
-#scrollTopBtn:hover {
-  background: var(--primary);
-}
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+            padding: 0 20px;
+        }
 
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 2.2rem;
-  }
+        .content-area {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 30px;
+        }
 
-  .section h2 {
-    font-size: 1.5rem;
-  }
-}
+        .sidebar {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 25px;
+            height: fit-content;
+            position: sticky;
+            top: 150px;
+        }
 
-  </style>
-</head><body>
-  <header>
-    <h1>Mohammed RABEEH MP</h1>
-    <p>Accountant | Research Institute, IGNOU | Islamic Scholar</p>
-  </header>  <div class="container">
-    <div class="section" id="about">
-      <h2>About Me</h2>
-      <p>I am an Accountant at a reputed Research Institute under IGNOU. My professional strength lies in financial reporting, budgeting, audits, and compliance with government standards.</p>
-      <p>I am also a passionate Islamic scholar, balancing professional duties with religious study and community guidance.</p>
-    </div><div class="section" id="quote">
-  <h2>Motivational Quotes</h2>
-  <p class="quote">"Discipline is the bridge between goals and accomplishment." — Jim Rohn</p>
-  <p class="quote">"Accounting is the language of business." — Warren Buffett</p>
-  <p class="quote">"Strive for accuracy in all matters. Even a decimal can destroy trust."</p>
-</div>
+        .page {
+            display: none;
+        }
 
-<div class="section" id="accounting">
-  <h2>Accounting Expertise</h2>
-  <p><strong>1. Financial Accounting:</strong> Preparation of balance sheets, income statements, and cash flow statements. Ensuring transparency in institutional finances.</p>
-  <p><strong>2. Cost Accounting:</strong> Understanding and optimizing costs of operations and academic programs within the research institute.</p>
-  <p><strong>3. Audit Support:</strong> Preparation and assistance for internal and external audits, ensuring legal and procedural compliance.</p>
-  <p><strong>4. Taxation:</strong> Hands-on experience in TDS, GST filings, and compliance with regulatory norms.</p>
-  <p><strong>5. Research Budgeting:</strong> Collaborating with project investigators to budget and track funding for research initiatives.</p>
-</div>
+        .page.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
 
-<div class="section" id="blog">
-  <h2>Blog Highlights</h2>
-  <p><strong>📘 How Islamic Finance Reshapes Modern Economy:</strong> A look at Riba-free alternatives and ethical investing.</p>
-  <p><strong>📊 Budgeting Tips for Research Institutions:</strong> Efficient allocation and tracking of research grants.</p>
-  <p><strong>🧠 Productivity & Faith:</strong> How Islamic routines boost focus and reduce procrastination.</p>
-</div>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-<div class="section" id="mission">
-  <h2>Mission & Values</h2>
-  <p>To serve society by integrating ethics with economics. I uphold Islamic principles in every financial transaction I handle, ensuring barakah in both workplace and personal life.</p>
-  <p>Knowledge, discipline, and sincerity guide my personal and professional decisions.</p>
-</div>
+        .section {
+            margin-bottom: 40px;
+        }
 
-<div class="section" id="contact">
-  <h2>Contact</h2>
-  <div class="contact-box">
-    <p><strong>Phone:</strong> <a href="tel:+919074300268">+91 9074300268</a></p>
-    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/m.rrabeehh?igsh=Y2M3MXVhbzJtc3Ux" target="_blank">@m.rrabeehh</a></p>
-    <div class="social-buttons">
-      <a href="https://wa.me/919074300268" target="_blank">WhatsApp Me</a>
-      <a href="https://www.instagram.com/m.rrabeehh?igsh=Y2M3MXVhbzJtc3Ux" target="_blank">Visit Instagram</a>
+        .section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--secondary);
+            font-family: 'Cairo', sans-serif;
+            color: var(--primary);
+        }
+
+        .section p {
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .quote {
+            font-style: italic;
+            color: var(--primary);
+            border-left: 4px solid var(--accent);
+            padding: 15px 20px;
+            background: #fffbe6;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 25px 0;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .expertise-card {
+            background: var(--light-bg);
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--secondary);
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .expertise-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .blog-card {
+            background: var(--light-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-img {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .contact-box {
+            background: #eaf4f4;
+            padding: 25px;
+            border-radius: var(--radius);
+        }
+
+        .contact-box p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-box i {
+            margin-right: 10px;
+            color: var(--secondary);
+            font-size: 1.2rem;
+            width: 25px;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-buttons a {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 25px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            font-weight: 500;
+        }
+
+        .social-buttons a:hover {
+            background: var(--primary);
+        }
+
+        .social-buttons a i {
+            margin-right: 8px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--primary);
+            color: #ccc;
+            font-size: 0.95rem;
+            margin-top: 50px;
+        }
+
+        /* Scroll to top button */
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease;
+            z-index: 999;
+        }
+
+        #scrollTopBtn:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+            
+            header h1 {
+                font-size: 2.8rem;
+            }
+            
+            header p {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--primary);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .expertise-grid, .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 130px 15px 80px;
+            }
+            
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            header p {
+                font-size: 1.1rem;
+            }
+            
+            .section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">Mohammed RABEEH MP</a>
+        <div class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#expertise">Expertise</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Header -->
+    <header id="home">
+        <h1>Mohammed RABEEH MP</h1>
+        <p>Accountant | Research Institute, IGNOU | Islamic Scholar</p>
+    </header>
+
+    <!-- Page Navigation -->
+    <div class="page-nav">
+        <div class="page-nav-container">
+            <button class="page-btn active" data-page="home">Home</button>
+            <button class="page-btn" data-page="about">About</button>
+            <button class="page-btn" data-page="expertise">Expertise</button>
+            <button class="page-btn" data-page="blog">Blog</button>
+            <button class="page-btn" data-page="mission">Mission</button>
+            <button class="page-btn" data-page="contact">Contact</button>
+            <button class="page-btn" data-page="page7">Finance</button>
+            <button class="page-btn" data-page="page8">Research</button>
+            <button class="page-btn" data-page="page9">Taxation</button>
+            <button class="page-btn" data-page="page10">Audits</button>
+            <button class="page-btn" data-page="page11">Ethics</button>
+            <button class="page-btn" data-page="page12">Budgeting</button>
+            <button class="page-btn" data-page="page13">Compliance</button>
+            <button class="page-btn" data-page="page14">Education</button>
+            <button class="page-btn" data-page="page15">Articles</button>
+            <button class="page-btn" data-page="page16">Resources</button>
+            <button class="page-btn" data-page="page17">Projects</button>
+            <button class="page-btn" data-page="page18">Testimonials</button>
+            <button class="page-btn" data-page="page19">FAQs</button>
+            <button class="page-btn" data-page="page20">Services</button>
+        </div>
     </div>
-  </div>
-</div>
 
-  </div>  <footer>
-    &copy; 2025 Mohammed RABEEH MP. All rights reserved.
-  </footer><button id="scrollTopBtn" title="Go to top">↑</button>
-
-  <script>
-    const scrollTopBtn = document.getElementById("scrollTopBtn");
-    window.onscroll = function () {
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        scrollTopBtn.style.display = "block";
-      } else {
-        scrollTopBtn.style.display = "none";
-      }
-    };
-
-    scrollTopBtn.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  </script></body></html>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="content-area">
+            <!-- Home Page -->
+            <div id="home-page" class="page active">
+                <div class="section">
+                    <h2>Welcome to My Professional Portfolio</h2>
+                    <p>I am an Accountant at a reputed Research Institute under IGNOU with expertise in financial reporting, budgeting, audits, and compliance with government standards. Alongside my professional career, I am a passionate Islamic scholar dedicated to balancing professional duties with religious study and community guidance.</p>
+                    
+                    <div class="quote">
+                        "Discipline is the bridge between goals and accomplishment." — Jim Rohn
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>Professional Highlights</h2>
+                    <div class="expertise-grid">
+                        <div class="expertise-card">
+                            <h3>Financial Accounting</h3>
+                            <p>Preparation of balance sheets, income statements, and cash flow statements with a focus on institutional transparency.</p>
+                        </div>
+                        <div class="expertise-card">
+                            <h3>Cost Accounting</h3>
+                            <p>Expertise in understanding and optimizing costs of operations and academic programs.</p>
+                        </div>
+                        <div class="expertise-card">
+                            <h3>Audit Support</h3>
+                            <p>Preparation and assistance for internal and external audits, ensuring legal compliance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- About Page -->
+            <div id="about-page" class="page">
+                <div class="section">
+                    <h2>About Me</h2>
+                    <p>With over a decade of experience in financial management within academic research institutions, I have developed a comprehensive understanding of the unique financial challenges and requirements of the education sector. My work at IGNOU has allowed me to contribute to meaningful research initiatives through effective financial stewardship.</p>
+                    
+                    <p>My journey as an Islamic scholar began during my university years, where I developed a deep interest in Islamic jurisprudence and ethics. This dual path has enabled me to integrate ethical principles into modern financial practices, creating a unique perspective on responsible financial management.</p>
+                    
+                    <p>I hold a Master's degree in Commerce with specialization in Accounting, and have completed advanced certifications in Islamic Finance from renowned institutions. This combination of formal education and self-directed religious studies forms the foundation of my professional approach.</p>
+                </div>
+                
+                <div class="section">
+                    <h2>Professional Journey</h2>
+                    <p><strong>2015-Present:</strong> Senior Accountant, Research Institute, IGNOU</p>
+                    <p><strong>2012-2015:</strong> Financial Analyst, Education Development Trust</p>
+                    <p><strong>2010-2012:</strong> Junior Accountant, Academic Research Foundation</p>
+                </div>
+            </div>
+            
+            <!-- Expertise Page -->
+            <div id="expertise-page" class="page">
+                <div class="section">
+                    <h2>Accounting Expertise</h2>
+                    <div class="expertise-grid">
+                        <div class="expertise-card">
+                            <h3>Financial Accounting</h3>
+                            <p>Preparation of balance sheets, income statements, and cash flow statements. Ensuring transparency in institutional finances.</p>
+                        </div>
+                        <div class="expertise-card">
+                            <h3>Cost Accounting</h3>
+                            <p>Understanding and optimizing costs of operations and academic programs within the research institute.</p>
+                        </div>
+                        <div class="expertise-card">
+                            <h3>Audit Support</h3>
+                            <p>Preparation and assistance for internal and external audits, ensuring legal and procedural compliance.</p>
+                        </div>
+                        <div class="expertise-card">
+                            <h3>Taxation</h3>
+                            <p>Hands-on experience in TDS, GST filings, and compliance with regulatory norms.</p>
+                        </div>
+                        <div class="expertise-card">
+                            <h3>Research Budgeting</h3>
+                            <p>Collaborating with project investigators to budget and track funding for research initiatives.</p>
+                        </div>
+                        <div class="expertise-card">
+                            <h3>Financial Compliance</h3>
+                            <p>Ensuring adherence to government financial regulations and institutional policies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Blog Page -->
+            <div id="blog-page" class="page">
+                <div class="section">
+                    <h2>Blog Highlights</h2>
+                    <div class="blog-grid">
+                        <div class="blog-card">
+                            <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                            <div class="blog-content">
+                                <h3>How Islamic Finance Reshapes Modern Economy</h3>
+                                <p>A look at Riba-free alternatives and ethical investing principles that are gaining global recognition.</p>
+                            </div>
+                        </div>
+                        <div class="blog-card">
+                            <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                
